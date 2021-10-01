@@ -1,0 +1,315 @@
+/* Definimos variables tanto para colores como para fuentes tipográficas*/
+:root {
+    --red:hsl(0, 100%, 68%);
+    --very-dark-blue:hsl(230, 29%, 20%);
+    --dark-grayish-blue: hsl(230, 11%, 40%);
+    --grayish-blue: hsl(231, 7%, 65%);
+    --light-grayish-blue: hsl(207, 33%, 95%);
+    --ff-heading:'Barlow Condensed', sans-serif;
+    --ff-body:'Barlow', sans-serif;
+}
+
+* ,
+*::before ,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: 18px;
+    font-family: var(--ff-body);
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ---------------------------------HEADER--------------------------------- */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 15vh;
+    width: 100vw;
+    padding: 0 20px ;
+}
+/* ---------------------------------NAV--------------------------------- */
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.toggle-button {
+    position: absolute;
+    right:20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    color: #000 ;
+    background-color: #000;
+    border-radius: 10px;
+}
+
+/* Estilizamos el nav__items cuando este esté abierto. */
+.nav__items {
+    position: absolute;
+    top: 15vh;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column; 
+    justify-content: space-around;
+    text-align: center;
+    width: 85vw;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    list-style: none;
+    border: 1px solid rgb(226, 225, 225);
+    box-shadow: 1px 1px 5px rgb(189, 189, 189) ;
+    background-color: #fff;
+}
+
+.nav__items.active {
+    display: flex; 
+}
+
+.nav__link {
+    text-decoration: none;
+    font-family:var(--ff-heading);
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--very-dark-blue);
+}
+
+.hr {
+    width: 80%;
+    border-color: var(--light-grayish-blue);
+}
+
+.nav__link--gray {
+    color: var(--grayish-blue);
+}
+/* ---------------------------------HERO--------------------------------- */
+.hero__img {
+    margin-top: 50px;
+}
+/* ---------------------------------CONTENT--------------------------------- */
+.content {
+    padding: 0 20px;
+}
+/* ---------NEW CONTAINER-------- */
+.new-container {
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.new-container__information {
+    padding: 10px 20px; 
+    margin-right: 20px;
+    font-family: var(--ff-heading);
+    text-transform: uppercase;
+    color: var(--light-grayish-blue);
+    border-radius: 50px;
+    background-color: var(--very-dark-blue);
+}
+
+.new-container__title {
+    font-family: var(--ff-heading);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--grayish-blue);
+}
+/* ---------TITLE,PARAGRAPH,BTNS-------- */
+.content__title {
+    font-family: var(--ff-heading);
+    font-size: 2.3em;
+    text-transform: uppercase;
+    color: var(--very-dark-blue);
+}
+
+.content__paragraph {
+    width: 80%;
+    line-height: 25px;
+    color: var(--grayish-blue);
+}
+/* ---------BTNS CONTAINER-------- */
+
+.btns {
+    padding-top: 30px;
+}
+
+.btn {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: var(--ff-heading);
+    padding: 10px 15px;
+
+}
+
+.btn--red {
+    margin-right: 20px;
+    border-radius: 5px;
+    color: var(--light-grayish-blue);
+    background-color: var(--red);
+}
+
+
+.btn--preview {
+    color: var(--grayish-blue);
+}
+/* ---------PSEUDOCLASES/PSEUDOELEMENTOS-------- */
+.btn__red:hover {
+    opacity: .9;
+}
+/* ---------MEDIA QUERIES-------- */
+
+@media screen and (min-width:425px) {
+    .content__title {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width:768px) {
+    body {
+        font-size: 18.5px;
+    }
+
+/*---------------------------------HEADER--------------------------------- */
+    .header {
+        padding: 0 30px;
+    }
+
+    .nav__items {
+        height: 450px;
+    }
+
+    .toggle-button {
+        right:30px;
+    }
+/*---------------------------------MAIN--------------------------------- */
+    .main {
+        padding: 0 30px;
+    }
+}
+
+@media screen and (min-width:1024px) {
+/*---------------------------------HEADER--------------------------------- */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 15vh;
+}
+/* ---------------------------------NAV--------------------------------- */
+ 
+ .toggle-button {
+    display: none;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav__items {
+    position: static;
+    display: flex;
+    justify-content: initial;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    margin: 0 0 0 500px;
+    border:none;
+    box-shadow: none;
+    background-color: transparent; 
+}
+
+.nav__items.active {
+    display: flex; 
+}
+
+.nav__link {
+    margin-right: 50px;
+}
+
+.hr {
+    display: none;
+}
+
+.nav__link--gray {
+    color: var(--grayish-blue);
+}  
+/* ---------------------------------HERO--------------------------------- */
+.hero__img {
+    display: block;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+} 
+
+ .content {
+   margin-left: 180px;
+   padding: 0;
+}
+
+} 
+
+@media screen and (min-width:1440px) { 
+
+    .header__img {
+        margin-left: 50px;
+    }
+    .nav__items {
+        margin-left: 900px;
+    }
+
+    .nav__link:hover {
+        text-decoration: underline;
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns: repeat( 2 , 50%) ;
+        grid-template-areas: 
+        "content    hero";   
+    }
+
+    .content {
+        grid-area: content;
+        margin: 0 0 0 50px;
+    }
+
+    .hero {
+        grid-area: hero;
+    }
+
+    .hero__img {
+        margin-top: 150px;
+        width: 100%;
+    }
+
+    .new-container {
+        margin-top: 150px;
+    }
+
+    .content__title {
+        font-size: 3.5em;
+        width: 90%;
+    }
+
+    .content__paragraph {
+        width: 45%;
+    }
+}
+
